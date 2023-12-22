@@ -74,9 +74,9 @@ export const gameBoredFactory = () => {
   };
 };
 
-export const player = () => {
+export const player = (playerType=0) => {
   // This object allow for turn switching and controls how AI player works.
-  let aiTurn = 0;
+  let turn = 0;
   const aIMoves = [];
   const aI = () => {
     // The Y and X axis are decided by the random math method then checked if it's a duplicate or not.
@@ -86,13 +86,12 @@ export const player = () => {
     let xAxis = Math.floor(Math.random() * 10 + 1);
     if (!aIMoves.includes(xAxis + String.fromCharCode(yAxis))) {
       aIMoves.push(xAxis + String.fromCharCode(yAxis));
-      aiTurn = 0;
+      turn = 0;
       return xAxis + String.fromCharCode(yAxis);
     } else return aI()
   };
-  return {
-    aI
-  };
+  const human = () => {
+    turn = 0
+  }
+  return playerType == 'AI' ? aI : human
 };
-
-
