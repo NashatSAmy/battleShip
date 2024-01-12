@@ -95,3 +95,5 @@ export const player = (playerType=0) => {
   }
   return playerType == 'AI' ? aI : human
 };
+
+const gameLoop = () => {}
