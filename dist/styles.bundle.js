@@ -229,9 +229,51 @@ footer {
   word-spacing: 5px;
 }
 
+button {
+  margin-top: 35px;
+  width: 50%;
+  padding: 5px;
+  background-color: crimson;
+  border: 2px solid crimson;
+  color: #f7df3b;
+  font-family: "Seymour One";
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #f7df3b;
+  border: 2px solid #f7df3b;
+  color: crimson;
+  transition: all 150ms;
+}
+
+button:active {
+  background-color: black;
+  transition: all 50ms;
+}
+
 /**************************/
 /******Classes Style*******/
 /**************************/
+.scoreContainer {
+  background-color: black;
+  width: 100%;
+}
+
+.scoreContainer h1 {
+  color: #fde73b;
+  font-family: "Seymour One";
+  font-size: 2rem;
+  text-align: center;
+}
+
+.scoreContainer h2 {
+  color: #fde73b;
+  font-family: "Seymour One";
+  font-size: 1rem;
+  text-align: center;
+}
+
 
 .playerContainer,
 .aiContainer {
@@ -242,7 +284,10 @@ footer {
 
 .gameControls {
   flex: 1;
-  background-color: rebeccapurple;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .playerContainer h1,
@@ -269,7 +314,8 @@ footer {
   gap: 1px;
 }
 
-.lBCell, .nBCell {
+.lBCell,
+.nBCell {
   text-align: center;
   align-self: center;
   font-size: large;
@@ -280,10 +326,13 @@ footer {
   align-self: end;
 }
 
-.pGCell, .aGCell {
+.pGCell,
+.aGCell {
   background-color: #0f365785;
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA,2BAA2B;AAC3B,2BAA2B;AAC3B,2BAA2B,EACoF,mBAAmB,EACxB,cAAc;;AAExH,2BAA2B;AAC3B,2BAA2B;AAC3B,2BAA2B;;AAE3B;EACE,yDAAqD;EACrD,aAAa;EACb,sBAAsB;EACtB,YAAY;EACZ,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,2BAA2B;EAC3B,sBAAsB;EACtB,WAAW;EACX,YAAY;EACZ,eAAe;EACf,kBAAkB;EAClB,eAAe;EACf,+BAA+B;EAC/B,cAAc;EACd,+CAA+C;AACjD;;AAEA;EACE,sBAAsB;EACtB,YAAY;EACZ,UAAU;EACV,YAAY;EACZ,aAAa;EACb,6BAA6B;EAC7B,2BAA2B;AAC7B;;AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,2BAA2B;EAC3B,iBAAiB;EACjB,iBAAiB;AACnB;;AAEA,2BAA2B;AAC3B,2BAA2B;AAC3B,2BAA2B;;AAE3B;;EAEE,OAAO;EACP,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,OAAO;EACP,+BAA+B;AACjC;;AAEA;;EAEE,eAAe;EACf,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,+BAA+B;AACjC;;AAEA;;EAEE,aAAa;EACb,sCAAsC;EACtC,mCAAmC;EACnC,sBAAsB;EACtB,WAAW;EACX,YAAY;EACZ,iBAAiB;EACjB,mBAAmB;EACnB,2BAA2B;EAC3B,2CAA2C;EAC3C,QAAQ;AACV;;AAEA;EACE,kBAAkB;EAClB,kBAAkB;EAClB,gBAAgB;EAChB,gBAAgB;AAClB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,2BAA2B;AAC7B","sourcesContent":["/**************************/\r\n/******Fonts Import********/\r\n/**************************/\r\n@import url(\"https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Rubik+Broken+Fax&display=swap\"); /*Rubik Broken Fax*/\r\n@import url(\"https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Seymour+One&display=swap\"); /*Seymour One*/\r\n\r\n/**************************/\r\n/*******Tags Style*********/\r\n/**************************/\r\n\r\nbody {\r\n  background-image: url(\"./images/body-background.jpg\");\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\nheader {\r\n  background-color: #fe000087;\r\n  box-sizing: border-box;\r\n  width: 100%;\r\n  padding: 5px;\r\n  margin-top: 5px;\r\n  text-align: center;\r\n  font-size: 3rem;\r\n  font-family: \"Rubik Broken Fax\";\r\n  color: #ffeb3b;\r\n  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);\r\n}\r\n\r\nmain {\r\n  box-sizing: border-box;\r\n  height: 100%;\r\n  width: 90%;\r\n  margin: 25px;\r\n  display: flex;\r\n  justify-content: space-around;\r\n  background-color: #0000001c;\r\n}\r\n\r\nfooter {\r\n  color: #ffeb3b;\r\n  font-size: small;\r\n  background-color: #0000004a;\r\n  padding: 5px 10px;\r\n  word-spacing: 5px;\r\n}\r\n\r\n/**************************/\r\n/******Classes Style*******/\r\n/**************************/\r\n\r\n.playerContainer,\r\n.aiContainer {\r\n  flex: 2;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.gameControls {\r\n  flex: 1;\r\n  background-color: rebeccapurple;\r\n}\r\n\r\n.playerContainer h1,\r\n.aiContainer h1 {\r\n  font-size: 2rem;\r\n  text-align: center;\r\n  margin: 25px;\r\n  color: yellow;\r\n  font-family: \"Rubik Broken Fax\";\r\n}\r\n\r\n.pG,\r\n.aG {\r\n  display: grid;\r\n  grid-template-columns: repeat(11, 1fr);\r\n  grid-template-rows: repeat(11, 1fr);\r\n  box-sizing: border-box;\r\n  height: 55%;\r\n  margin: 15px;\r\n  padding-top: 15px;\r\n  padding-right: 10px;\r\n  background-color: #ffffff54;\r\n  box-shadow: 0px 2px 10px 0px rgb(1 120 166);\r\n  gap: 1px;\r\n}\r\n\r\n.lBCell, .nBCell {\r\n  text-align: center;\r\n  align-self: center;\r\n  font-size: large;\r\n  font-weight: 900;\r\n}\r\n\r\n.nBCell {\r\n  align-self: end;\r\n}\r\n\r\n.pGCell, .aGCell {\r\n  background-color: #0f365785;\r\n}\r\n"],"sourceRoot":""}]);
+
+
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA,2BAA2B;AAC3B,2BAA2B;AAC3B,2BAA2B,EACoF,mBAAmB,EACxB,cAAc;;AAExH,2BAA2B;AAC3B,2BAA2B;AAC3B,2BAA2B;;AAE3B;EACE,yDAAqD;EACrD,aAAa;EACb,sBAAsB;EACtB,YAAY;EACZ,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,2BAA2B;EAC3B,sBAAsB;EACtB,WAAW;EACX,YAAY;EACZ,eAAe;EACf,kBAAkB;EAClB,eAAe;EACf,+BAA+B;EAC/B,cAAc;EACd,+CAA+C;AACjD;;AAEA;EACE,sBAAsB;EACtB,YAAY;EACZ,UAAU;EACV,YAAY;EACZ,aAAa;EACb,6BAA6B;EAC7B,2BAA2B;AAC7B;;AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,2BAA2B;EAC3B,iBAAiB;EACjB,iBAAiB;AACnB;;AAEA;EACE,gBAAgB;EAChB,UAAU;EACV,YAAY;EACZ,yBAAyB;EACzB,yBAAyB;EACzB,cAAc;EACd,0BAA0B;AAC5B;;AAEA;EACE,eAAe;EACf,yBAAyB;EACzB,yBAAyB;EACzB,cAAc;EACd,qBAAqB;AACvB;;AAEA;EACE,uBAAuB;EACvB,oBAAoB;AACtB;;AAEA,2BAA2B;AAC3B,2BAA2B;AAC3B,2BAA2B;AAC3B;EACE,uBAAuB;EACvB,WAAW;AACb;;AAEA;EACE,cAAc;EACd,0BAA0B;EAC1B,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,cAAc;EACd,0BAA0B;EAC1B,eAAe;EACf,kBAAkB;AACpB;;;AAGA;;EAEE,OAAO;EACP,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,OAAO;EACP,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;;EAEE,eAAe;EACf,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,+BAA+B;AACjC;;AAEA;;EAEE,aAAa;EACb,sCAAsC;EACtC,mCAAmC;EACnC,sBAAsB;EACtB,WAAW;EACX,YAAY;EACZ,iBAAiB;EACjB,mBAAmB;EACnB,2BAA2B;EAC3B,2CAA2C;EAC3C,QAAQ;AACV;;AAEA;;EAEE,kBAAkB;EAClB,kBAAkB;EAClB,gBAAgB;EAChB,gBAAgB;AAClB;;AAEA;EACE,eAAe;AACjB;;AAEA;;EAEE,2BAA2B;AAC7B","sourcesContent":["/**************************/\r\n/******Fonts Import********/\r\n/**************************/\r\n@import url(\"https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Rubik+Broken+Fax&display=swap\"); /*Rubik Broken Fax*/\r\n@import url(\"https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Seymour+One&display=swap\"); /*Seymour One*/\r\n\r\n/**************************/\r\n/*******Tags Style*********/\r\n/**************************/\r\n\r\nbody {\r\n  background-image: url(\"./images/body-background.jpg\");\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\nheader {\r\n  background-color: #fe000087;\r\n  box-sizing: border-box;\r\n  width: 100%;\r\n  padding: 5px;\r\n  margin-top: 5px;\r\n  text-align: center;\r\n  font-size: 3rem;\r\n  font-family: \"Rubik Broken Fax\";\r\n  color: #ffeb3b;\r\n  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);\r\n}\r\n\r\nmain {\r\n  box-sizing: border-box;\r\n  height: 100%;\r\n  width: 90%;\r\n  margin: 25px;\r\n  display: flex;\r\n  justify-content: space-around;\r\n  background-color: #0000001c;\r\n}\r\n\r\nfooter {\r\n  color: #ffeb3b;\r\n  font-size: small;\r\n  background-color: #0000004a;\r\n  padding: 5px 10px;\r\n  word-spacing: 5px;\r\n}\r\n\r\nbutton {\r\n  margin-top: 35px;\r\n  width: 50%;\r\n  padding: 5px;\r\n  background-color: crimson;\r\n  border: 2px solid crimson;\r\n  color: #f7df3b;\r\n  font-family: \"Seymour One\";\r\n}\r\n\r\nbutton:hover {\r\n  cursor: pointer;\r\n  background-color: #f7df3b;\r\n  border: 2px solid #f7df3b;\r\n  color: crimson;\r\n  transition: all 150ms;\r\n}\r\n\r\nbutton:active {\r\n  background-color: black;\r\n  transition: all 50ms;\r\n}\r\n\r\n/**************************/\r\n/******Classes Style*******/\r\n/**************************/\r\n.scoreContainer {\r\n  background-color: black;\r\n  width: 100%;\r\n}\r\n\r\n.scoreContainer h1 {\r\n  color: #fde73b;\r\n  font-family: \"Seymour One\";\r\n  font-size: 2rem;\r\n  text-align: center;\r\n}\r\n\r\n.scoreContainer h2 {\r\n  color: #fde73b;\r\n  font-family: \"Seymour One\";\r\n  font-size: 1rem;\r\n  text-align: center;\r\n}\r\n\r\n\r\n.playerContainer,\r\n.aiContainer {\r\n  flex: 2;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.gameControls {\r\n  flex: 1;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.playerContainer h1,\r\n.aiContainer h1 {\r\n  font-size: 2rem;\r\n  text-align: center;\r\n  margin: 25px;\r\n  color: yellow;\r\n  font-family: \"Rubik Broken Fax\";\r\n}\r\n\r\n.pG,\r\n.aG {\r\n  display: grid;\r\n  grid-template-columns: repeat(11, 1fr);\r\n  grid-template-rows: repeat(11, 1fr);\r\n  box-sizing: border-box;\r\n  height: 55%;\r\n  margin: 15px;\r\n  padding-top: 15px;\r\n  padding-right: 10px;\r\n  background-color: #ffffff54;\r\n  box-shadow: 0px 2px 10px 0px rgb(1 120 166);\r\n  gap: 1px;\r\n}\r\n\r\n.lBCell,\r\n.nBCell {\r\n  text-align: center;\r\n  align-self: center;\r\n  font-size: large;\r\n  font-weight: 900;\r\n}\r\n\r\n.nBCell {\r\n  align-self: end;\r\n}\r\n\r\n.pGCell,\r\n.aGCell {\r\n  background-color: #0f365785;\r\n}\r\n\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

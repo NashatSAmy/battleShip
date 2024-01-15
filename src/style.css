@@ -49,9 +49,51 @@ footer {
   word-spacing: 5px;
 }
 
+button {
+  margin-top: 35px;
+  width: 50%;
+  padding: 5px;
+  background-color: crimson;
+  border: 2px solid crimson;
+  color: #f7df3b;
+  font-family: "Seymour One";
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #f7df3b;
+  border: 2px solid #f7df3b;
+  color: crimson;
+  transition: all 150ms;
+}
+
+button:active {
+  background-color: black;
+  transition: all 50ms;
+}
+
 /**************************/
 /******Classes Style*******/
 /**************************/
+.scoreContainer {
+  background-color: black;
+  width: 100%;
+}
+
+.scoreContainer h1 {
+  color: #fde73b;
+  font-family: "Seymour One";
+  font-size: 2rem;
+  text-align: center;
+}
+
+.scoreContainer h2 {
+  color: #fde73b;
+  font-family: "Seymour One";
+  font-size: 1rem;
+  text-align: center;
+}
+
 
 .playerContainer,
 .aiContainer {
@@ -62,7 +104,10 @@ footer {
 
 .gameControls {
   flex: 1;
-  background-color: rebeccapurple;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .playerContainer h1,
@@ -89,7 +134,8 @@ footer {
   gap: 1px;
 }
 
-.lBCell, .nBCell {
+.lBCell,
+.nBCell {
   text-align: center;
   align-self: center;
   font-size: large;
@@ -100,6 +146,9 @@ footer {
   align-self: end;
 }
 
-.pGCell, .aGCell {
+.pGCell,
+.aGCell {
   background-color: #0f365785;
 }
+
+
